@@ -3,7 +3,6 @@
     msg: &'static str
  }
 
-
 struct InvalidAccountNumberError;
 
 struct AccountNumberNotFoundError;
