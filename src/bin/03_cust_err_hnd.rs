@@ -92,4 +92,28 @@ fn delete_account(db: &mut Vec<Account>, ac_num: String) -> Result<(), AccountEr
 
 fn main() {
     let mut db : Vec<Account> = Vec::new();
+
+    create_new_account(&mut db, 
+        Account {
+            ac_number: "123".to_string(),
+            ac_name: "Abc".to_string(),
+            balance: 1000.0,
+        }
+    );
+
+    create_new_account(&mut db, 
+        Account {
+            ac_number: "124".to_string(),
+            ac_name: "Pqr".to_string(),
+            balance: 23.0,
+        }
+    );
+
+    show_all_accounts(&db);
+
+    show_single_account(&db, "123".to_string());
+    update_account_information(&mut db, "123".to_string(), "LMN".to_string(), 9999.).unwrap();
+    show_single_account(&db, "123".to_string());
+    delete_account(&mut db, "123".to_string()).unwrap();
+    show_all_accounts(&db);
 }
