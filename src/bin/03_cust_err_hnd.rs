@@ -1,6 +1,6 @@
  #[derive(Debug)]
  struct AccountError {
-    msg: &'static str
+    msg: String
  }
 
 struct InvalidAccountNumberError;
@@ -15,13 +15,13 @@ impl std::fmt::Display for AccountError {
 
 impl From<AccountNumberNotFoundError> for AccountError {
     fn from(_: AccountNumberNotFoundError) -> Self {
-        AccountError { msg: "Account number not found" }
+        AccountError { msg: "Account number not found".to_string() }
     }
 }
 
 impl From<InvalidAccountNumberError> for AccountError {
     fn from(_: InvalidAccountNumberError) -> Self {
-        AccountError { msg: "Invalid account number" }
+        AccountError { msg: "Invalid account number".to_string() }
     }
     
 }
