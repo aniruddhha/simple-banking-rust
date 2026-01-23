@@ -23,9 +23,7 @@ impl From<InvalidAccountNumberError> for AccountError {
     fn from(_: InvalidAccountNumberError) -> Self {
         AccountError { msg: "Invalid account number".to_string() }
     }
-    
 }
-
 
 struct Account {
     ac_number: String,
